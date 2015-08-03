@@ -51,7 +51,11 @@ class SiteController extends Controller
     {
         return $this->render('index');
     }
-
+    
+    public function actionSay($target = 'World')
+    {
+        return $this->render('say', ['target' => $target]);
+    }
     public function actionLogin()
     {
         if (!\Yii::$app->user->isGuest) {

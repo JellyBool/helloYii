@@ -39,6 +39,7 @@ AppAsset::register($this);
                     [
                         'label' => 'Status',
                         'items' => [
+                            ['label' => 'View', 'url' => ['/status/index']],
                             ['label' => 'Create', 'url' => ['/status/create']],
                         ],
                     ],

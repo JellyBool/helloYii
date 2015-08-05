@@ -941,84 +941,52 @@
         ]
     },
     {
-        "name": "twig/twig",
-        "version": "v1.19.0",
-        "version_normalized": "1.19.0.0",
+        "name": "bower-asset/jquery-ui",
+        "version": "1.11.4",
+        "version_normalized": "1.11.4.0",
         "source": {
             "type": "git",
-            "url": "https://github.com/twigphp/Twig.git",
-            "reference": "edbeaf43b0a606cdaadc32a11d2673614a377b90"
+            "url": "https://github.com/components/jqueryui.git",
+            "reference": "c34f8dbf3ba57b3784b93f26119f436c0e8288e1"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/twigphp/Twig/zipball/edbeaf43b0a606cdaadc32a11d2673614a377b90",
-            "reference": "edbeaf43b0a606cdaadc32a11d2673614a377b90",
+            "url": "https://api.github.com/repos/components/jqueryui/zipball/c34f8dbf3ba57b3784b93f26119f436c0e8288e1",
+            "reference": "c34f8dbf3ba57b3784b93f26119f436c0e8288e1",
             "shasum": ""
         },
         "require": {
-            "php": ">=5.2.7"
+            "bower-asset/jquery": ">=1.6"
         },
-        "time": "2015-07-31 13:45:26",
-        "type": "library",
+        "type": "bower-asset-library",
         "extra": {
-            "branch-alias": {
-                "dev-master": "1.19-dev"
-            }
+            "bower-asset-main": [
+                "jquery-ui.js"
+            ],
+            "bower-asset-ignore": []
         },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-0": {
-                "Twig_": "lib/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "BSD-3-Clause"
-        ],
-        "authors": [
-            {
-                "name": "Fabien Potencier",
-                "email": "fabien@symfony.com",
-                "homepage": "http://fabien.potencier.org",
-                "role": "Lead Developer"
-            },
-            {
-                "name": "Armin Ronacher",
-                "email": "armin.ronacher@active-4.com",
-                "role": "Project Founder"
-            },
-            {
-                "name": "Twig Team",
-                "homepage": "http://twig.sensiolabs.org/contributors",
-                "role": "Contributors"
-            }
-        ],
-        "description": "Twig, the flexible, fast, and secure template language for PHP",
-        "homepage": "http://twig.sensiolabs.org",
-        "keywords": [
-            "templating"
-        ]
+        "installation-source": "dist"
     },
     {
-        "name": "yiisoft/yii2-twig",
+        "name": "yiisoft/yii2-jui",
         "version": "2.0.4",
         "version_normalized": "2.0.4.0",
         "source": {
             "type": "git",
-            "url": "https://github.com/yiisoft/yii2-twig.git",
-            "reference": "adfcaff4542a22763941783b9708f3f1e6962960"
+            "url": "https://github.com/yiisoft/yii2-jui.git",
+            "reference": "ce16f29cca654702c2ee500ccad9657a2d2e6a09"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/yiisoft/yii2-twig/zipball/adfcaff4542a22763941783b9708f3f1e6962960",
-            "reference": "adfcaff4542a22763941783b9708f3f1e6962960",
+            "url": "https://api.github.com/repos/yiisoft/yii2-jui/zipball/ce16f29cca654702c2ee500ccad9657a2d2e6a09",
+            "reference": "ce16f29cca654702c2ee500ccad9657a2d2e6a09",
             "shasum": ""
         },
         "require": {
-            "twig/twig": "~1.0",
+            "bower-asset/jquery-ui": "1.11.*@stable",
             "yiisoft/yii2": ">=2.0.4"
         },
-        "time": "2015-05-10 22:11:09",
+        "time": "2015-05-10 22:09:43",
         "type": "yii2-extension",
         "extra": {
             "branch-alias": {
@@ -1032,7 +1000,7 @@
         "installation-source": "dist",
         "autoload": {
             "psr-4": {
-                "yii\\twig\\": ""
+                "yii\\jui\\": ""
             }
         },
         "notification-url": "https://packagist.org/downloads/",
@@ -1041,15 +1009,130 @@
         ],
         "authors": [
             {
-                "name": "Alexander Makarov",
-                "email": "sam@rmcreative.ru"
+                "name": "Qiang Xue",
+                "email": "qiang.xue@gmail.com"
             }
         ],
-        "description": "The Twig integration for the Yii framework",
+        "description": "The Jquery UI extension for the Yii framework",
         "keywords": [
-            "renderer",
-            "twig",
+            "jQuery UI",
             "yii2"
+        ]
+    },
+    {
+        "name": "yiisoft/yii2-authclient",
+        "version": "2.0.4",
+        "version_normalized": "2.0.4.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/yiisoft/yii2-authclient.git",
+            "reference": "cbe801a7d8bb477be15cb0fbdaa75ca5bdfeb91b"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/yiisoft/yii2-authclient/zipball/cbe801a7d8bb477be15cb0fbdaa75ca5bdfeb91b",
+            "reference": "cbe801a7d8bb477be15cb0fbdaa75ca5bdfeb91b",
+            "shasum": ""
+        },
+        "require": {
+            "ext-curl": "*",
+            "yiisoft/yii2": ">=2.0.4"
+        },
+        "time": "2015-05-10 22:07:56",
+        "type": "yii2-extension",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.0.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "yii\\authclient\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Paul Klimov",
+                "email": "klimov.paul@gmail.com"
+            }
+        ],
+        "description": "External authentication via OAuth and OpenID for the Yii framework",
+        "keywords": [
+            "OpenId",
+            "auth",
+            "oauth",
+            "yii2"
+        ]
+    },
+    {
+        "name": "dektrium/yii2-user",
+        "version": "v0.9.4",
+        "version_normalized": "0.9.4.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/dektrium/yii2-user.git",
+            "reference": "891fe6c3957bde7f3a7893775fd304fc84140599"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/dektrium/yii2-user/zipball/891fe6c3957bde7f3a7893775fd304fc84140599",
+            "reference": "891fe6c3957bde7f3a7893775fd304fc84140599",
+            "shasum": ""
+        },
+        "require": {
+            "yiisoft/yii2": "~2.0",
+            "yiisoft/yii2-authclient": "~2.0",
+            "yiisoft/yii2-bootstrap": "~2.0",
+            "yiisoft/yii2-jui": "~2.0",
+            "yiisoft/yii2-swiftmailer": "~2.0"
+        },
+        "require-dev": {
+            "codeception/aspect-mock": "*",
+            "codeception/specify": "*",
+            "codeception/verify": "*",
+            "yiisoft/yii2-codeception": "~2.0"
+        },
+        "time": "2015-04-06 09:21:39",
+        "type": "yii2-extension",
+        "extra": {
+            "bootstrap": "dektrium\\user\\Bootstrap",
+            "branch-alias": {
+                "dev-master": "0.9.x-dev",
+                "dev-develop": "1.0.x-dev"
+            },
+            "asset-installer-paths": {
+                "npm-asset-library": "vendor/npm",
+                "bower-asset-library": "vendor/bower"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "dektrium\\user\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Dmitry Erofeev",
+                "email": "dmeroff@gmail.com",
+                "homepage": "http://dmeroff.ru"
+            }
+        ],
+        "description": "Flexible user registration and authentication module for Yii2",
+        "keywords": [
+            "User management",
+            "dektrium",
+            "yii2",
+            "yii2-user"
         ]
     }
 ]

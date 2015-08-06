@@ -95,9 +95,11 @@ class RegistrationForm extends Model
         }
 
         $this->user->setAttributes([
+            'scenario' => 'register',
             'email'    => $this->email,
             'username' => $this->username,
-            'password' => $this->password
+            'password' => $this->password,
+            'role'=>10,
         ]);
 
         return $this->user->register();

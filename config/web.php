@@ -18,10 +18,10 @@ $config = [
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],
-        'user' => [
+       /* 'user' => [
             'identityClass' => 'app\models\User',
             'enableAutoLogin' => true,
-        ],
+        ],*/
 
         'errorHandler' => [
             'errorAction' => 'site/error',
@@ -54,6 +54,9 @@ $config = [
         'user' => [
             'class' => 'dektrium\user\Module',
             'confirmWithin' => 21600,
+            'modelMap' => [
+                'User' => 'app\models\User',
+            ],
             'cost' => 12,
             'admins' => ['admin']
         ],

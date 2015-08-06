@@ -52,6 +52,10 @@ class Status extends \yii\db\ActiveRecord
         ];
     }
 
+    public function getUser()
+    {
+        return $this->hasOne(User::className(), ['id' => 'created_by']);
+    }
 
     public function getPermissions() {
         return array (self::PERMISSIONS_PRIVATE=>'Private',self::PERMISSIONS_PUBLIC=>'Public');

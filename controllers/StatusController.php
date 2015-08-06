@@ -8,6 +8,9 @@ use app\models\StatusSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\filters\AccessControl;
+use app\components\AccessRule;
+use app\models\User;
 
 /**
  * StatusController implements the CRUD actions for Status model.
@@ -21,6 +24,43 @@ class StatusController extends Controller
                 'class' => VerbFilter::className(),
                 'actions' => [
                     'delete' => ['post'],
+                ],
+            ],
+            'access' => [
+                'class' => AccessControl::className(),
+                // We will override the default rule config with the new AccessRule class
+                'ruleConfig' => [
+                    'class' => AccessRule::className(),
+                ],
+                'only' => ['index','create', 'update', 'delete'],
+                'rules' => [
+                    [
+                        'actions' => ['index','create'],
+                        'allow' => true,
+                        // Allow users, moderators and admins to create
+                        'roles' => [
+                            User::ROLE_USER,
+                            User::ROLE_MODERATOR,
+                            User::ROLE_ADMIN
+                        ],
+                    ],
+                    [
+                        'actions' => ['update'],
+                        'allow' => true,
+                        // Allow moderators and admins to update
+                        'roles' => [
+                            User::ROLE_MODERATOR,
+                            User::ROLE_ADMIN
+                        ],
+                    ],
+                    [
+                        'actions' => ['delete'],
+                        'allow' => true,
+                        // Allow admins to delete
+                        'roles' => [
+                            User::ROLE_ADMIN
+                        ],
+                    ],
                 ],
             ],
         ];
@@ -63,6 +103,7 @@ class StatusController extends Controller
         $model = new Status();
 
         if ($model->load(Yii::$app->request->post())) {
+            $model->created_by = Yii::$app->user->getId();
             $model->created_at = time();
             $model->updated_at = time();
             if ($model->save()) {
@@ -121,4 +162,6 @@ class StatusController extends Controller
             throw new NotFoundHttpException('The requested page does not exist.');
         }
     }
+
+
 }

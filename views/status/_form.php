@@ -12,13 +12,24 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'message')->textarea(['rows' => 6]) ?>
+    <!--
+    <?//= $form->field($model, 'message')->textarea(['rows' => 6]) ?>
+    -->
+    <?= $form->field($model, 'message')->widget(\yii\redactor\widgets\Redactor::className(),
+        [
+            'clientOptions' => [
+                'imageManagerJson' => ['/redactor/upload/image-json'],
+                'imageUpload' => ['/redactor/upload/image'],
+                'fileUpload' => ['/redactor/upload/file'],
+                'lang' => 'zh_cn',
+                'plugins' => ['clips', 'fontcolor','imagemanager']
+            ]
+        ]
+        ) ?>
 
     <?=
     $form->field($model, 'permissions')->dropDownList($model->getPermissions(),
         ['prompt'=>'- Choose Your Permissions -']) ?>
-
-
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

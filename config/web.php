@@ -51,6 +51,10 @@ $config = [
         'db' => require(__DIR__ . '/db.php'),
     ],
     'modules' => [
+        'redactor' => [
+            'class' => 'yii\redactor\RedactorModule',
+            'imageAllowExtensions'=>['jpg','png','gif']
+        ],
         'user' => [
             'class' => 'dektrium\user\Module',
             'confirmWithin' => 21600,
